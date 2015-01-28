@@ -10,7 +10,7 @@ import UIKit
 
 // setup sample to do items for project
 
-let todoItems = [
+let todosData: NSMutableArray = [
     Todo(title: "Pick Up Luka", description: "Pick him up from Preschool", priority: 5),
     Todo(title: "Buy flowers", description: "Buy nice flowers for Michelle", priority: 3),
     Todo(title: "Complete EveryDo App", description: "Complete full app", priority: 4),

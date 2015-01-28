@@ -9,10 +9,8 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
-
     var detailViewController: DetailViewController? = nil
-    var objects = NSMutableArray()
-
+    var objects = todosData
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -73,8 +71,8 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-        let object = objects[indexPath.row] as NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row] as Todo
+        cell.textLabel!.text = object.title
         return cell
     }
 
