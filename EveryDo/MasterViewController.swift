@@ -72,7 +72,13 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as ToDoCell
 
         let object = objects[indexPath.row] as Todo
-        cell.titleLabel?.text = object.title
+        
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: object.title)
+        attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, attributeString.length))
+        
+        
+        cell.titleLabel.attributedText = attributeString
+//        cell.titleLabel?.text = object.title
         cell.descriptionLabel?.text = object.description
         if let priorityNumb: Int = object.priorityNumber {
             cell.priorityNumberLabel?.text = String(priorityNumb)
@@ -94,6 +100,7 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+
 
 
 }
