@@ -17,6 +17,7 @@
 		276588041A796BB300E1FC21 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276588031A796BB300E1FC21 /* Todo.swift */; };
 		276588061A796C2B00E1FC21 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276588051A796C2B00E1FC21 /* SampleData.swift */; };
 		2765880A1A79763400E1FC21 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276588091A79763400E1FC21 /* ToDoCell.swift */; };
+		2782E2541A79A4E800D4C454 /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2782E2531A79A4E800D4C454 /* AddItemTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		276588051A796C2B00E1FC21 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleData.swift; path = ../SampleData.swift; sourceTree = "<group>"; };
 		276588091A79763400E1FC21 /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		2782E1F61A797F2700D4C454 /* ScratchPad.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ScratchPad.playground; sourceTree = "<group>"; };
+		2782E2531A79A4E800D4C454 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				276587E11A795A8000E1FC21 /* AppDelegate.swift */,
 				276587E31A795A8000E1FC21 /* MasterViewController.swift */,
+				2782E2531A79A4E800D4C454 /* AddItemTableViewController.swift */,
 				2782E1F61A797F2700D4C454 /* ScratchPad.playground */,
 				276587E51A795A8000E1FC21 /* DetailViewController.swift */,
 				276588031A796BB300E1FC21 /* Todo.swift */,
@@ -226,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2782E2541A79A4E800D4C454 /* AddItemTableViewController.swift in Sources */,
 				276587E61A795A8000E1FC21 /* DetailViewController.swift in Sources */,
 				2765880A1A79763400E1FC21 /* ToDoCell.swift in Sources */,
 				276587E41A795A8000E1FC21 /* MasterViewController.swift in Sources */,

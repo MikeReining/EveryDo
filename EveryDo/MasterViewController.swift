@@ -22,11 +22,6 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
@@ -57,6 +52,30 @@ class MasterViewController: UITableViewController {
             }
         }
     }
+    
+    // Examples of unwinding segues called when DONE button is pressed on add player screen
+    
+    @IBAction func cancelToMasterVC(segue:UIStoryboardSegue) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func saveNewToDoItem(segue:UIStoryboardSegue) {
+        // create a reference to the source VC so that we can get access to the player object
+//        let addItemsVC = segue.sourceViewController as AddItemTableViewController
+        
+        //add the new player to the players array
+//        addItemsVC.append(playerDetailsTableViewController.player)
+        
+        //update the tableView with new row
+//        let indexPath = NSIndexPath(forRow: players.count-1, inSection: 0)
+//        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
+    
+    
 
     // MARK: - Table View
 
