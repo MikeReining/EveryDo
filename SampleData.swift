@@ -15,5 +15,5 @@ let todosData: NSMutableArray = [
     Todo(title: "Buy flowers", description: "Buy nice flowers for Michelle", priority: 3),
     Todo(title: "Complete EveryDo App", description: "Complete full app", priority: 4),
     Todo(title: "Go for a run", description: nil, priority: 2),
-    Todo(title: "Create vision board", description: "Create nice vision board for office", priority: 3)
+    Todo(title: "Create vision board", description: "Create nice vision board for office", priority: nil)
     ]

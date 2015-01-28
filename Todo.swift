@@ -14,7 +14,7 @@ class Todo {
     var priorityNumber: Int?
     var taskCompleted: Bool = false
     
-    init(title: String, description: String?, priority: Int) {
+    init(title: String, description: String?, priority: Int?) {
         self.title = title
         self.description = description
         self.priorityNumber = priority

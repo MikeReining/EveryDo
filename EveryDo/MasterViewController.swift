@@ -69,10 +69,11 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as ToDoCell
 
         let object = objects[indexPath.row] as Todo
-        cell.textLabel!.text = object.title
+        cell.titleLabel.text = object.title
+        
         return cell
     }
 
