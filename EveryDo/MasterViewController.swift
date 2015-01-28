@@ -73,11 +73,10 @@ class MasterViewController: UITableViewController {
 
         let object = objects[indexPath.row] as Todo
         
-        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: object.title)
-        attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, attributeString.length))
+
+
         
-        
-        cell.titleLabel.attributedText = attributeString
+        cell.titleLabel.attributedText = strikethroughText(object.title)
 //        cell.titleLabel?.text = object.title
         cell.descriptionLabel?.text = object.description
         if let priorityNumb: Int = object.priorityNumber {
@@ -100,7 +99,12 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
+    
+    func strikethroughText(string:String) -> NSMutableAttributedString {
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: string)
+        attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, attributeString.length))
+        return attributeString
+    }
 
 
 }
