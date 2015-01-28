@@ -73,14 +73,24 @@ class MasterViewController: UITableViewController {
 
         let object = objects[indexPath.row] as Todo
         
+        // Strikethrough completed tasks
+        if object.taskCompleted == true {
+            cell.titleLabel.attributedText = strikethroughText(object.title)
+            if let description: String = object.description {
+                cell.descriptionLabel?.attributedText = strikethroughText(object.description!)
+            }
+            if let priorityNumb: Int = object.priorityNumber {
+                let priorityNumbAsString = String(priorityNumb)
+                cell.priorityNumberLabel.attributedText = strikethroughText(priorityNumbAsString)
+            }
 
-
-        
-        cell.titleLabel.attributedText = strikethroughText(object.title)
-//        cell.titleLabel?.text = object.title
-        cell.descriptionLabel?.text = object.description
-        if let priorityNumb: Int = object.priorityNumber {
-            cell.priorityNumberLabel?.text = String(priorityNumb)
+        // If Not completed, display as regular text
+        } else {
+            cell.titleLabel?.text = object.title
+            cell.descriptionLabel?.text = object.description
+            if let priorityNumb: Int = object.priorityNumber {
+                cell.priorityNumberLabel?.text = String(priorityNumb)
+            }
         }
         
         return cell
