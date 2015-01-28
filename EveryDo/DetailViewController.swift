@@ -9,7 +9,9 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 

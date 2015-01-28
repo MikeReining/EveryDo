@@ -32,25 +32,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
-                                <rect key="frame" x="20" y="292" width="560" height="17"/>
+                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0XM-y9-sOw">
+                                <rect key="frame" x="0.0" y="0.0" width="190.5" height="17"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" size="system"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K88-RY-JcG">
+                                <rect key="frame" x="26" y="116" width="78" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXu-Ob-2kN">
+                                <rect key="frame" x="122" y="116" width="452" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc1-Jy-kf6">
+                                <rect key="frame" x="26" y="144" width="78" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE9-Fu-y7o">
+                                <rect key="frame" x="122" y="144" width="452" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZo-xC-qvo">
+                                <rect key="frame" x="564" y="84" width="10" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
-                            <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
-                            <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
+                            <constraint firstItem="QE9-Fu-y7o" firstAttribute="width" secondItem="vXu-Ob-2kN" secondAttribute="width" id="4B0-X8-SgX"/>
+                            <constraint firstItem="K88-RY-JcG" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="10" id="H4j-aB-MyQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RZo-xC-qvo" secondAttribute="trailing" constant="10" id="Lhj-hr-9Q5"/>
+                            <constraint firstItem="sc1-Jy-kf6" firstAttribute="top" secondItem="K88-RY-JcG" secondAttribute="bottom" constant="10" id="Li9-yl-BrX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vXu-Ob-2kN" secondAttribute="trailing" constant="10" id="VAj-A1-mMs"/>
+                            <constraint firstItem="vXu-Ob-2kN" firstAttribute="centerY" secondItem="K88-RY-JcG" secondAttribute="centerY" id="Vv7-g6-RVc"/>
+                            <constraint firstItem="sc1-Jy-kf6" firstAttribute="centerY" secondItem="QE9-Fu-y7o" secondAttribute="centerY" id="f1o-cO-f7H"/>
+                            <constraint firstItem="sc1-Jy-kf6" firstAttribute="width" secondItem="K88-RY-JcG" secondAttribute="width" id="fSF-gu-nCz"/>
+                            <constraint firstItem="K88-RY-JcG" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="52" id="ijR-uR-fJ0"/>
+                            <constraint firstItem="QE9-Fu-y7o" firstAttribute="leading" secondItem="sc1-Jy-kf6" secondAttribute="trailing" constant="18" id="jCm-9q-vyl"/>
+                            <constraint firstItem="sc1-Jy-kf6" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" constant="10" id="mqC-k3-EkJ"/>
+                            <constraint firstItem="vXu-Ob-2kN" firstAttribute="leading" secondItem="K88-RY-JcG" secondAttribute="trailing" constant="18.5" id="u8i-OO-cFV"/>
+                            <constraint firstItem="RZo-xC-qvo" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" constant="20" id="uG2-f3-WeF"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="To Do Item Detail" id="mOI-FS-AaM"/>
                     <connections>
+                        <outlet property="descriptionLabel" destination="QE9-Fu-y7o" id="bRq-5I-aKy"/>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="priorityLabel" destination="RZo-xC-qvo" id="70D-zw-iJs"/>
+                        <outlet property="titleLabel" destination="vXu-Ob-2kN" id="qnW-sm-jDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
