@@ -72,7 +72,11 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as ToDoCell
 
         let object = objects[indexPath.row] as Todo
-        cell.titleLabel.text = object.title
+        cell.titleLabel?.text = object.title
+        cell.descriptionLabel?.text = object.description
+        if let priorityNumb: Int = object.priorityNumber {
+            cell.priorityNumberLabel?.text = String(priorityNumb)
+        }
         
         return cell
     }
