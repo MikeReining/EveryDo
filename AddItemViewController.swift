@@ -1,5 +1,5 @@
 //
-//  AddItemTableViewController.swift
+//  AddItemViewController.swift
 //  EveryDo
 //
 //  Created by Michael Reining on 1/28/15.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class AddItemTableViewController: UITableViewController {
+class AddItemViewController: UIViewController {
 
 }

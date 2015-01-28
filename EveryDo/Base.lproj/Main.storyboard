@@ -179,45 +179,6 @@
             </objects>
             <point key="canvasLocation" x="685" y="-666"/>
         </scene>
-        <!--Add Item-->
-        <scene sceneID="sSR-sV-OKw">
-            <objects>
-                <tableViewController id="0fh-pr-c4D" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Muf-Ar-pfT">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Hnt-M0-pyy">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hnt-M0-pyy" id="a6E-Oe-23J">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="0fh-pr-c4D" id="U9m-XZ-yjr"/>
-                            <outlet property="delegate" destination="0fh-pr-c4D" id="xcv-S0-HMz"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Add Item" id="p5M-hH-Jm6">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jbP-2O-WvS">
-                            <connections>
-                                <segue destination="sQi-OZ-04f" kind="unwind" unwindAction="cancelToMasterVC:" id="udR-2J-99B"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="he4-R1-7kZ">
-                            <connections>
-                                <segue destination="sQi-OZ-04f" kind="unwind" unwindAction="saveNewToDoItem:" id="iPe-6d-BPi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DbB-Bu-OsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="sQi-OZ-04f" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2111" y="-630"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="5iU-ix-hNQ">
             <objects>
@@ -227,12 +188,43 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="0fh-pr-c4D" kind="relationship" relationship="rootViewController" id="Ybf-HE-8Zq"/>
+                        <segue destination="Etm-4G-IJz" kind="relationship" relationship="rootViewController" id="93h-e7-gkq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ksf-Zq-Vxb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1404" y="-746"/>
+        </scene>
+        <!--Add Item-->
+        <scene sceneID="d1X-Je-9xd">
+            <objects>
+                <viewController id="Etm-4G-IJz" customClass="AddItemViewController" customModule="EveryDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HbA-qn-TYz"/>
+                        <viewControllerLayoutGuide type="bottom" id="yIc-G1-tBe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jd8-P7-o8f">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Item" id="NBH-Rn-hgN">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VTD-13-99m">
+                            <connections>
+                                <segue destination="nQT-qy-f9O" kind="unwind" unwindAction="cancelToMasterVC:" id="kMg-gC-00C"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Aa4-Ic-Hx7">
+                            <connections>
+                                <segue destination="nQT-qy-f9O" kind="unwind" unwindAction="saveNewToDoItem:" id="vjx-XB-cE9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0Q-HJ-nwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="nQT-qy-f9O" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2183" y="-738"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">

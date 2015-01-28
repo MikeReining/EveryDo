@@ -60,15 +60,7 @@ class MasterViewController: UITableViewController {
     }
     
     @IBAction func saveNewToDoItem(segue:UIStoryboardSegue) {
-        // create a reference to the source VC so that we can get access to the player object
-//        let addItemsVC = segue.sourceViewController as AddItemTableViewController
-        
-        //add the new player to the players array
-//        addItemsVC.append(playerDetailsTableViewController.player)
-        
-        //update the tableView with new row
-//        let indexPath = NSIndexPath(forRow: players.count-1, inSection: 0)
-//        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+
         
         dismissViewControllerAnimated(true, completion: nil)
         
