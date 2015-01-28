@@ -14,6 +14,8 @@
 		276587EB1A795A8000E1FC21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 276587EA1A795A8000E1FC21 /* Images.xcassets */; };
 		276587EE1A795A8000E1FC21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276587EC1A795A8000E1FC21 /* LaunchScreen.xib */; };
 		276587FA1A795A8000E1FC21 /* EveryDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276587F91A795A8000E1FC21 /* EveryDoTests.swift */; };
+		276588041A796BB300E1FC21 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276588031A796BB300E1FC21 /* Todo.swift */; };
+		276588061A796C2B00E1FC21 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276588051A796C2B00E1FC21 /* SampleData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		276587F31A795A8000E1FC21 /* EveryDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EveryDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		276587F81A795A8000E1FC21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		276587F91A795A8000E1FC21 /* EveryDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryDoTests.swift; sourceTree = "<group>"; };
+		276588031A796BB300E1FC21 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Todo.swift; path = ../Todo.swift; sourceTree = "<group>"; };
+		276588051A796C2B00E1FC21 /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleData.swift; path = ../SampleData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				276587E11A795A8000E1FC21 /* AppDelegate.swift */,
 				276587E31A795A8000E1FC21 /* MasterViewController.swift */,
 				276587E51A795A8000E1FC21 /* DetailViewController.swift */,
+				276588031A796BB300E1FC21 /* Todo.swift */,
+				276588051A796C2B00E1FC21 /* SampleData.swift */,
 				276587E71A795A8000E1FC21 /* Main.storyboard */,
 				276587EA1A795A8000E1FC21 /* Images.xcassets */,
 				276587EC1A795A8000E1FC21 /* LaunchScreen.xib */,
@@ -218,6 +224,8 @@
 				276587E61A795A8000E1FC21 /* DetailViewController.swift in Sources */,
 				276587E41A795A8000E1FC21 /* MasterViewController.swift in Sources */,
 				276587E21A795A8000E1FC21 /* AppDelegate.swift in Sources */,
+				276588061A796C2B00E1FC21 /* SampleData.swift in Sources */,
+				276588041A796BB300E1FC21 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
