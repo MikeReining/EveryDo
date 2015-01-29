@@ -12,8 +12,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
+    @IBOutlet weak var dueDateLabel: UILabel!
 
     var detailItem: Todo!
 
@@ -23,10 +22,40 @@ class DetailViewController: UIViewController {
         if let description = detailItem.description {
             descriptionLabel.text = detailItem.description
         }
+        
+        // Add priority if set
         if let priorityNumb = detailItem.priorityNumber {
-            priorityLabel.text = String(priorityNumb)
+            var priorityText: String = ""
+            switch priorityNumb {
+            case 1:
+                priorityText = "⭐️"
+            case 2:
+                priorityText = "⭐️⭐️"
+            case 3:
+                priorityText = "⭐️⭐️⭐️"
+            default:
+                println("no priority set")
+            }
+
+            priorityLabel.text = priorityText
         }
 
+        // Add due date if set
+        // Display due date if it exists
+        if let dueDate = detailItem.date {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MMM-dd" // Jan-28
+            let dateAsString = dateFormatter.stringFromDate(dueDate)
+            let today = NSDate()
+            if today.compare(dueDate) == NSComparisonResult.OrderedDescending && detailItem.taskCompleted == false {
+                println("Past Due Date!")
+                dueDateLabel.text = "PAST DUE"
+                dueDateLabel.textColor = UIColor.redColor()
+            } else {
+                println("dates are equal");
+                dueDateLabel.text = "Due: \(dateAsString)"
+            }
+        }
     }
 
     override func viewDidLoad() {
