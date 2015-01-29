@@ -15,11 +15,11 @@ class Todo {
     var taskCompleted: Bool
     var date: NSDate?
     
-    init(title: String, description: String?, priority: Int?, completed: Bool, date: NSDate?) {
+    init(title: String, description: String?, priorityNumber: Int?, taskCompleted: Bool, date: NSDate?) {
         self.title = title
         self.description = description
-        self.priorityNumber = priority
-        self.taskCompleted = completed
+        self.priorityNumber = priorityNumber
+        self.taskCompleted = taskCompleted
         self.date = date
     }
     

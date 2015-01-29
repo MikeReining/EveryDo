@@ -11,13 +11,13 @@ import UIKit
 // setup sample to do items for project
 
 let todosData: NSMutableArray = [
-    Todo(title: "Pick Up Luka", description: "Pick him up from Preschool before 5:00PM and then buy food for dinner.  Have to leave office by 4:15 at the latest given traffic.", priority: 1, completed: false, date: NSDate(dateString:"2015-01-28")),
-    Todo(title: "Buy flowers", description: "Buy nice flowers for Michelle", priority: 2, completed: true, date: NSDate(dateString:"2015-01-25")),
-    Todo(title: "Complete EveryDo App", description: "Complete full app", priority: 3, completed: false, date: NSDate(dateString:"2015-01-30")),
-    Todo(title: "Go for a run", description: nil, priority: 1, completed: false, date: NSDate(dateString:"2015-01-29")),
-    Todo(title: "Create vision board", description: "Create nice vision board for office", priority: nil, completed: false, date: nil),
-    Todo(title: "Test", description: nil, priority: nil, completed: true, date: nil)
-    ]
+    Todo(title: "Pick Up Luka", description: "Pick him up from Preschool before 5:00PM and then buy food for dinner.  Have to leave office by 4:15 at the latest given traffic.", priorityNumber: 1, taskCompleted: false, date: nil),
+    Todo(title: "Buy flowers", description: "Buy nice flowers for Michelle", priorityNumber: 2, taskCompleted: true, date: nil),
+    Todo(title: "Complete EveryDo App", description: "Complete full app", priorityNumber: 3, taskCompleted: false, date: nil),
+    Todo(title: "Go for a run", description: nil, priorityNumber: 1, taskCompleted: false, date: nil),
+    Todo(title: "Create vision board", description: "Create nice vision board for office", priorityNumber: nil, taskCompleted: false, date: nil),
+    Todo(title: "Test", description: nil, priorityNumber: nil, taskCompleted: true, date: nil)
+]
 
 
 extension NSDate

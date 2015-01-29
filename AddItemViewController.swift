@@ -31,7 +31,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         datePicker.hidden = false
     }
     override func viewDidLoad() {
-        todo = Todo(title: "New task", description: nil, priority: nil, completed: false, date: nil)
+        todo = Todo(title: "New task", description: nil, priorityNumber: nil, taskCompleted: false, date: nil)
         taskTextField.delegate = self
         detailsTextField.delegate = self
         datePicker.hidden = true
