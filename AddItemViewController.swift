@@ -13,6 +13,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var detailsTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBAction func addTitle(sender: UITextField) {
         todo.title = sender.text
@@ -26,11 +27,20 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         todo.priorityNumber = sender.selectedSegmentIndex + 1
     }
     
+    @IBAction func addDueDateButtonPressed(sender: AnyObject) {
+        datePicker.hidden = false
+    }
     override func viewDidLoad() {
         todo = Todo(title: "New task", description: nil, priority: nil, completed: false, date: nil)
         taskTextField.delegate = self
         detailsTextField.delegate = self
+        datePicker.hidden = true
     }
+    
+    @IBAction func dateChanged(sender: UIDatePicker) {
+        todo.date = sender.date
+    }
+    
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
         if textField == taskTextField {

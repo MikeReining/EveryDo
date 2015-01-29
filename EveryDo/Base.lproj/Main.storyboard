@@ -267,6 +267,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VMK-7c-J7A">
+                                <rect key="frame" x="91" y="302" width="473" height="29"/>
+                                <segments>
+                                    <segment title="Low"/>
+                                    <segment title="Medium"/>
+                                    <segment title="High"/>
+                                </segments>
+                                <connections>
+                                    <action selector="prioritySelected:" destination="Etm-4G-IJz" eventType="valueChanged" id="5EL-iR-LIW"/>
+                                </connections>
+                            </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add new task" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCo-Dx-XTe">
                                 <rect key="frame" x="92" y="95" width="472" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -292,17 +303,30 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VMK-7c-J7A">
-                                <rect key="frame" x="92" y="302" width="473" height="29"/>
-                                <segments>
-                                    <segment title="Low"/>
-                                    <segment title="Medium"/>
-                                    <segment title="High"/>
-                                </segments>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDL-wD-XTP">
+                                <rect key="frame" x="19" y="353" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jns-xk-AMS">
+                                <rect key="frame" x="92" y="349" width="96" height="30"/>
+                                <state key="normal" title="Add Due Date">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="prioritySelected:" destination="Etm-4G-IJz" eventType="valueChanged" id="5EL-iR-LIW"/>
+                                    <action selector="addDueDateButtonPressed:" destination="Etm-4G-IJz" eventType="touchUpInside" id="KGX-mG-aUd"/>
                                 </connections>
-                            </segmentedControl>
+                            </button>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="iou-9j-TRl">
+                                <rect key="frame" x="0.0" y="394" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="444206022.322375">
+                                    <!--2015-01-29 06:33:42 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateChanged:" destination="Etm-4G-IJz" eventType="valueChanged" id="9H5-lA-EPu"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -312,7 +336,11 @@
                             <constraint firstItem="VMK-7c-J7A" firstAttribute="top" secondItem="yPD-cc-HFc" secondAttribute="bottom" constant="22" id="H9t-5b-rnn"/>
                             <constraint firstItem="yPD-cc-HFc" firstAttribute="leading" secondItem="oLz-6v-kfd" secondAttribute="trailing" constant="16" id="Heo-1J-9fv"/>
                             <constraint firstItem="IRv-XH-udw" firstAttribute="top" secondItem="HbA-qn-TYz" secondAttribute="bottom" constant="35" id="J1l-BZ-9Ho"/>
+                            <constraint firstItem="iou-9j-TRl" firstAttribute="top" secondItem="jns-xk-AMS" secondAttribute="bottom" constant="15" id="JDJ-rS-oQs"/>
+                            <constraint firstItem="iDL-wD-XTP" firstAttribute="top" secondItem="ORJ-7r-Mqb" secondAttribute="bottom" constant="28" id="MzI-MB-kL0"/>
                             <constraint firstItem="yPD-cc-HFc" firstAttribute="top" secondItem="hCo-Dx-XTe" secondAttribute="bottom" constant="5" id="PYq-hz-cW4"/>
+                            <constraint firstItem="jns-xk-AMS" firstAttribute="top" secondItem="VMK-7c-J7A" secondAttribute="bottom" constant="19" id="RB4-Sx-q64"/>
+                            <constraint firstItem="jns-xk-AMS" firstAttribute="leading" secondItem="iDL-wD-XTP" secondAttribute="trailing" constant="37" id="TNW-dI-Gn1"/>
                             <constraint firstItem="VMK-7c-J7A" firstAttribute="leading" secondItem="ORJ-7r-Mqb" secondAttribute="trailing" constant="18" id="Tfc-kA-AzJ"/>
                             <constraint firstItem="hCo-Dx-XTe" firstAttribute="leading" secondItem="IRv-XH-udw" secondAttribute="trailing" constant="16" id="Uqz-Ip-pMl"/>
                             <constraint firstItem="hCo-Dx-XTe" firstAttribute="width" secondItem="yPD-cc-HFc" secondAttribute="width" id="W4x-tS-m2m"/>
@@ -322,6 +350,7 @@
                             <constraint firstItem="oLz-6v-kfd" firstAttribute="top" secondItem="jd8-P7-o8f" secondAttribute="top" constant="133" id="dp5-27-Mic"/>
                             <constraint firstItem="oLz-6v-kfd" firstAttribute="leading" secondItem="ORJ-7r-Mqb" secondAttribute="leading" id="fhW-TR-dwj"/>
                             <constraint firstItem="IRv-XH-udw" firstAttribute="trailing" secondItem="oLz-6v-kfd" secondAttribute="trailing" id="gex-eq-CSo"/>
+                            <constraint firstItem="iDL-wD-XTP" firstAttribute="leading" secondItem="jd8-P7-o8f" secondAttribute="leadingMargin" constant="3" id="h4i-ue-Nnd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yPD-cc-HFc" secondAttribute="trailing" constant="20" id="hXa-oh-voJ"/>
                             <constraint firstItem="ORJ-7r-Mqb" firstAttribute="top" secondItem="oLz-6v-kfd" secondAttribute="bottom" constant="151" id="tfi-xs-LTh"/>
                         </constraints>
@@ -344,6 +373,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="datePicker" destination="iou-9j-TRl" id="WFA-Ck-P23"/>
                         <outlet property="detailsTextField" destination="yPD-cc-HFc" id="0nc-hS-zCH"/>
                         <outlet property="taskTextField" destination="hCo-Dx-XTe" id="HAb-Vg-SK0"/>
                     </connections>
@@ -351,7 +381,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0Q-HJ-nwz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nQT-qy-f9O" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2183" y="-738"/>
+            <point key="canvasLocation" x="2183" y="-736"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
