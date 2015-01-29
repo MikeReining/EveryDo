@@ -27,7 +27,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidLoad() {
-        todo = Todo(title: "New task", description: nil, priority: nil, completed: false)
+        todo = Todo(title: "New task", description: nil, priority: nil, completed: false, date: nil)
         taskTextField.delegate = self
         detailsTextField.delegate = self
     }

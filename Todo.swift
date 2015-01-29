@@ -13,12 +13,14 @@ class Todo {
     var description: String?
     var priorityNumber: Int?
     var taskCompleted: Bool
+    var date: NSDate?
     
-    init(title: String, description: String?, priority: Int?, completed: Bool) {
+    init(title: String, description: String?, priority: Int?, completed: Bool, date: NSDate?) {
         self.title = title
         self.description = description
         self.priorityNumber = priority
         self.taskCompleted = completed
+        self.date = date
     }
     
 }

@@ -12,4 +12,5 @@ class ToDoCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priorityNumberLabel: UILabel!
+    @IBOutlet weak var dueDateLabel: UILabel!
 }

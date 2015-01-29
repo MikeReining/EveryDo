@@ -140,6 +140,14 @@ class MasterViewController: UITableViewController {
                 }
                 cell.priorityNumberLabel?.text = priorityText
             }
+            // Display due date if it exists
+            if let dueDate = object.date {
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "MMM-dd" // Jan-28
+                let dateAsString = dateFormatter.stringFromDate(dueDate)
+                cell.dueDateLabel.text = dateAsString
+            }
+
 
         // If Not completed, display as regular text
         } else {
@@ -159,6 +167,21 @@ class MasterViewController: UITableViewController {
                     println("no priority set")
                 }
                 cell.priorityNumberLabel?.text = priorityText
+            }
+            // Display due date if it exists
+            if let dueDate = object.date {
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "MMM-dd" // Jan-28
+                let dateAsString = dateFormatter.stringFromDate(dueDate)
+                let today = NSDate()
+                if today.compare(dueDate) == NSComparisonResult.OrderedDescending {
+                    println("Past Due Date!")
+                    cell.dueDateLabel.text = "PAST DUE"
+                    cell.dueDateLabel.textColor = UIColor.redColor()
+                } else {
+                    println("dates are equal");
+                    cell.dueDateLabel.text = dateAsString
+                }
             }
         }
         
