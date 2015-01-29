@@ -11,7 +11,30 @@ import UIKit
 class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = todosData
+    
+    @IBOutlet weak var barButton: UIBarButtonItem!
+    @IBOutlet var listTableView: UITableView!
 
+    @IBAction func editTableView (sender:UIBarButtonItem)
+    {
+        if listTableView.editing{
+            //listTableView.editing = false;
+            listTableView.setEditing(false, animated: false);
+            barButton.style = UIBarButtonItemStyle.Plain;
+            barButton.title = "Edit";
+            //listTableView.reloadData();
+        }
+        else{
+            //listTableView.editing = true;
+            listTableView.setEditing(true, animated: true);
+            barButton.title = "Done";
+            barButton.style =  UIBarButtonItemStyle.Done;
+            //listTableView.reloadData();
+        }
+    }
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
@@ -26,6 +49,9 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
         }
+        
+        var longPress = UILongPressGestureRecognizer(target: self, action: "longPress:")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +78,7 @@ class MasterViewController: UITableViewController {
             }
         }
     }
+    
     
     // Examples of unwinding segues called when DONE button is pressed on add player screen
     
@@ -138,6 +165,8 @@ class MasterViewController: UITableViewController {
         return cell
     }
 
+    // Swipe to Delete Row in Table View
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
@@ -156,13 +185,17 @@ class MasterViewController: UITableViewController {
         return attributeString
     }
 
-    // Swipe to Delete Row in Table View
+    //MARK: Rearrange table rows via long press gesture recognizer
+
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true // Yes, the table view can be reordered
+    }
     
-
-    
-
-
-    
-
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        // update the item in my data source by first removing at the from index, then inserting at the to index.
+        let object: Todo = objects[fromIndexPath.row] as Todo
+        objects.removeObjectAtIndex(fromIndexPath.row)
+        objects.insertObject(object, atIndex: toIndexPath.row)
+    }
 }
 

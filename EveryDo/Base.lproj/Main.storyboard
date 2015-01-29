@@ -152,10 +152,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="CFv-GF-HbL" id="Mnx-XA-QGh"/>
                                     <outlet property="priorityNumberLabel" destination="i1Q-5m-SQ1" id="bHk-Ap-c2U"/>
                                     <outlet property="titleLabel" destination="FI5-HL-okw" id="Ub1-Iy-zMN"/>
+                                    <outletCollection property="gestureRecognizers" destination="BT7-XJ-9QT" appends="YES" id="QGw-Ee-C2P"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="6S0-TO-JiA"/>
                                 </connections>
                             </tableViewCell>
@@ -167,14 +169,24 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="To-do List" id="Zdf-7t-Un8">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Qid-tR-NyE">
+                            <connections>
+                                <action selector="editTableView:" destination="7bK-jq-Zjz" id="ko7-GR-Yp1"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="MMY-Xw-qAT">
                             <connections>
                                 <segue destination="2YB-00-Zlv" kind="presentation" id="ePD-xs-juh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="barButton" destination="Qid-tR-NyE" id="Ucv-0t-JER"/>
+                        <outlet property="listTableView" destination="r7i-6Z-zg0" id="BsZ-pf-Rc1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="BT7-XJ-9QT"/>
             </objects>
             <point key="canvasLocation" x="685" y="-666"/>
         </scene>
