@@ -9,22 +9,25 @@
 import UIKit
 
 class AddItemViewController: UIViewController, UITextFieldDelegate {
+    var todo: Todo!
+    
     @IBOutlet weak var taskTextField: UITextField!
     @IBOutlet weak var detailsTextField: UITextField!
     
     @IBAction func addTitle(sender: UITextField) {
-        
+        todo.title = sender.text
     }
     
-    @IBAction func addDescription(sender: UITextField) {
-        
+    @IBAction func descriptionChanged(sender: UITextField) {
+        todo.description = sender.text
     }
-    
     
     @IBAction func prioritySelected(sender: UISegmentedControl) {
+        todo.priorityNumber = sender.selectedSegmentIndex + 1
     }
     
     override func viewDidLoad() {
+        todo = Todo(title: "New task", description: nil, priority: nil, completed: false)
         taskTextField.delegate = self
         detailsTextField.delegate = self
     }
@@ -43,5 +46,14 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         
         return false
     }
+    
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SaveNewToDoItem" {
+//            todo = Todo(title: taskTextField.text, description: detailsTextField.text, priority: nil, completed: false)
+        }
+    }
+    
 
 }

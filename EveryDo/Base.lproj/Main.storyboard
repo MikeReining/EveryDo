@@ -140,7 +140,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1Q-5m-SQ1">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1Q-5m-SQ1">
                                             <rect key="frame" x="549" y="14" width="10" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -195,7 +195,7 @@
             </objects>
             <point key="canvasLocation" x="1404" y="-746"/>
         </scene>
-        <!--Add Item-->
+        <!--Add New Task-->
         <scene sceneID="d1X-Je-9xd">
             <objects>
                 <viewController id="Etm-4G-IJz" customClass="AddItemViewController" customModule="EveryDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -223,7 +223,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCo-Dx-XTe">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add new task" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCo-Dx-XTe">
                                 <rect key="frame" x="92" y="95" width="472" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
@@ -231,7 +231,7 @@
                                     <action selector="addTitle:" destination="Etm-4G-IJz" eventType="editingDidEnd" id="qVe-x3-GD3"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yPD-cc-HFc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Add description (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yPD-cc-HFc">
                                 <rect key="frame" x="92" y="130" width="472" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="LUe-bp-XLc"/>
@@ -239,7 +239,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
-                                    <action selector="addDescription:" destination="Etm-4G-IJz" eventType="editingDidEnd" id="MlN-4c-nOY"/>
+                                    <action selector="descriptionChanged:" destination="Etm-4G-IJz" eventType="editingChanged" id="o0q-oa-LE0"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORJ-7r-Mqb">
@@ -287,15 +287,15 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Item" id="NBH-Rn-hgN">
+                    <navigationItem key="navigationItem" title="Add New Task" id="NBH-Rn-hgN">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="VTD-13-99m">
                             <connections>
-                                <segue destination="nQT-qy-f9O" kind="unwind" unwindAction="cancelToMasterVC:" id="kMg-gC-00C"/>
+                                <segue destination="nQT-qy-f9O" kind="unwind" identifier="CancelToMasterVC" unwindAction="cancelToMasterVC:" id="kMg-gC-00C"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Aa4-Ic-Hx7">
                             <connections>
-                                <segue destination="nQT-qy-f9O" kind="unwind" unwindAction="saveNewToDoItem:" id="vjx-XB-cE9"/>
+                                <segue destination="nQT-qy-f9O" kind="unwind" identifier="saveNewToDoItem" unwindAction="saveNewToDoItem:" id="vjx-XB-cE9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

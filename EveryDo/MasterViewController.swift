@@ -60,8 +60,16 @@ class MasterViewController: UITableViewController {
     }
     
     @IBAction func saveNewToDoItem(segue:UIStoryboardSegue) {
-
+        // Create reference to source VC
+        let addItemVC = segue.sourceViewController as AddItemViewController
         
+        //add new item to array of items
+        objects.addObject(addItemVC.todo)
+        
+        //update tableView with new row
+        let indexPath = NSIndexPath(forRow: objects.count-1, inSection: 0)
+        tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+
         dismissViewControllerAnimated(true, completion: nil)
         
     }
@@ -92,8 +100,18 @@ class MasterViewController: UITableViewController {
             }
             // Display priority if it exists
             if let priorityNumb: Int = object.priorityNumber {
-                let priorityNumbAsString = String(priorityNumb)
-                cell.priorityNumberLabel.attributedText = strikethroughText(priorityNumbAsString)
+                var priorityText: String = ""
+                switch priorityNumb {
+                case 1:
+                    priorityText = "⭐️"
+                case 2:
+                    priorityText = "⭐️⭐️"
+                case 3:
+                    priorityText = "⭐️⭐️⭐️"
+                default:
+                    println("no priority set")
+                }
+                cell.priorityNumberLabel?.text = priorityText
             }
 
         // If Not completed, display as regular text
@@ -102,7 +120,18 @@ class MasterViewController: UITableViewController {
             cell.descriptionLabel?.text = object.description
             // Display priority if it exists
             if let priorityNumb: Int = object.priorityNumber {
-                cell.priorityNumberLabel?.text = String(priorityNumb)
+                var priorityText: String = ""
+                switch priorityNumb {
+                case 1:
+                    priorityText = "⭐️"
+                case 2:
+                    priorityText = "⭐️⭐️"
+                case 3:
+                    priorityText = "⭐️⭐️⭐️"
+                default:
+                    println("no priority set")
+                }
+                cell.priorityNumberLabel?.text = priorityText
             }
         }
         
