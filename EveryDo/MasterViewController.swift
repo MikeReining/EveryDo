@@ -90,6 +90,7 @@ class MasterViewController: UITableViewController {
             if let description: String = object.description {
                 cell.descriptionLabel?.attributedText = strikethroughText(object.description!)
             }
+            // Display priority if it exists
             if let priorityNumb: Int = object.priorityNumber {
                 let priorityNumbAsString = String(priorityNumb)
                 cell.priorityNumberLabel.attributedText = strikethroughText(priorityNumbAsString)
@@ -99,6 +100,7 @@ class MasterViewController: UITableViewController {
         } else {
             cell.titleLabel?.text = object.title
             cell.descriptionLabel?.text = object.description
+            // Display priority if it exists
             if let priorityNumb: Int = object.priorityNumber {
                 cell.priorityNumberLabel?.text = String(priorityNumb)
             }
