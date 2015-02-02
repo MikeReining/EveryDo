@@ -20,7 +20,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func descriptionChanged(sender: UITextField) {
-        todo.description = sender.text
+        todo.details = sender.text
     }
     
     @IBAction func prioritySelected(sender: UISegmentedControl) {
@@ -31,7 +31,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         datePicker.hidden = false
     }
     override func viewDidLoad() {
-        todo = Todo(title: "New task", description: nil, priority: nil, completed: false, date: nil)
+        todo = Todo(title: "New task", details: nil, priority: nil, completed: false, date: nil)
         taskTextField.delegate = self
         detailsTextField.delegate = self
         datePicker.hidden = true
