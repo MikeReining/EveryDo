@@ -19,8 +19,8 @@ class DetailViewController: UIViewController {
     func configureView() {
         // Update the user interface for the detail item.
         titleLabel.text = detailItem.title
-        if let description = detailItem.description {
-            descriptionLabel.text = detailItem.description
+        if let description = detailItem.details {
+            descriptionLabel.text = detailItem.details
         }
         
         // Add priority if set

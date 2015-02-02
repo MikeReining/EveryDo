@@ -122,8 +122,8 @@ class MasterViewController: UITableViewController {
         // Strikethrough completed tasks
         if object.taskCompleted == true {
             cell.titleLabel.attributedText = strikethroughText(object.title)
-            if let description: String = object.description {
-                cell.descriptionLabel?.attributedText = strikethroughText(object.description!)
+            if let description: String = object.details {
+                cell.descriptionLabel?.attributedText = strikethroughText(object.details!)
             }
             // Display priority if it exists
             if let priorityNumb: Int = object.priorityNumber {

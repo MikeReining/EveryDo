@@ -67,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2727B3341A7FC6AB00C76613 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				276588031A796BB300E1FC21 /* Todo.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		276587D31A795A8000E1FC21 = {
 			isa = PBXGroup;
 			children = (
@@ -93,7 +101,7 @@
 				2782E2551A79A88800D4C454 /* AddItemViewController.swift */,
 				2782E1F61A797F2700D4C454 /* ScratchPad.playground */,
 				276587E51A795A8000E1FC21 /* DetailViewController.swift */,
-				276588031A796BB300E1FC21 /* Todo.swift */,
+				2727B3341A7FC6AB00C76613 /* Model */,
 				276588091A79763400E1FC21 /* ToDoCell.swift */,
 				276588051A796C2B00E1FC21 /* SampleData.swift */,
 				276587E71A795A8000E1FC21 /* Main.storyboard */,
